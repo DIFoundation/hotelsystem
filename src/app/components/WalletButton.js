@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { ethers } from "ethers";
+import Balance from "./Balance";
 
 const WalletButton = () => {
   const [walletAddress, setWalletAddress] = useState(null);
@@ -34,22 +35,23 @@ const WalletButton = () => {
   };
 
   return (
-    <div style={{ textAlign: "center" }}>
+    <div className="absolute top-6 right-12 bg-yellow-500 text-black font-bold px-4 py-2 rounded-lg border-2 border-yellow-500 hover:bg-transparent hover:text-yellow-500"
+      style={{ 
+        textAlign: "center",
+        fontSize: "16px",
+        display: "flex"
+     }}>
+      <Balance />
       <button
         onClick={walletAddress ? disconnectWallet : connectWallet}
         style={{
-          backgroundColor: "#007bff",
-          color: "#fff",
-          padding: "12px 24px",
-          border: "none",
-          borderRadius: "8px",
+          backgroundColor: "inherit",
           cursor: "pointer",
-          fontSize: "16px",
           transition: "background-color 0.3s ease",
         }}
       >
         {walletAddress 
-          ? `Disconnect: ${walletAddress.slice(0, 6)}...${walletAddress.slice(-4)}` 
+          ? `${walletAddress.slice(0, 6)}...${walletAddress.slice(-4)}` 
           : "Connect Wallet"}
       </button>
     </div>

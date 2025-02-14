@@ -1,6 +1,5 @@
 "use client"
 import React from 'react';
-import Header from '@/app/components/Header';
 import { ethers } from 'ethers';
 import RoomStatus from '@/app/components/CheckStatusForm'
 import { CONTRACT_ADDRESS, CONTRACT_ABI } from '../api';
@@ -12,20 +11,16 @@ const Page = () => {
     const { roomNumber } = formData;
 
     try {
-      // Check if MetaMask is installed
       if (!window.ethereum) {
         throw new Error("MetaMask is not installed. Please install MetaMask to proceed.");
       }
 
-      // Create a provider and signer
       const provider = new ethers.BrowserProvider(window.ethereum);
-      const signer = await provider.getSigner(); // Await the signer
+      const signer = await provider.getSigner();
 
-      // Create a contract instance
       const contract = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, signer);
       console.log("Checking room status...");
 
-      // Call the `bookRoom` function on the smart contract
       const transaction = await contract.getRoomStatus ( roomNumber );
       
       alert(`Room Number ${roomNumber} is ${transaction}`);
@@ -39,7 +34,6 @@ const Page = () => {
 
   return (
     <div>
-      <Header />
 
       <h1>Check Room Status</h1>
       <RoomStatus getRoomStatus={roomStatus} />

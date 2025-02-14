@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 
-const RoomStatus = ({ getRoomStatus }) => { // Ensure the prop name matches
+const RoomStatus = ({ getRoomStatus }) => {
   const [formData, setFormData] = useState({
     roomNumber: "",
   });
@@ -13,7 +13,7 @@ const RoomStatus = ({ getRoomStatus }) => { // Ensure the prop name matches
   const handleSubmit = (e) => {
     e.preventDefault();
     if (typeof getRoomStatus === "function") {
-      getRoomStatus(formData); // Call the function passed as a prop
+      getRoomStatus(formData);
     } else {
       console.error("Room status is not a function");
     }

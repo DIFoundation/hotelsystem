@@ -1,4 +1,4 @@
-export const CONTRACT_ADDRESS = "0xec5A77c5E6aC8f275CFb27d3970e3D96f411dFaf";
+export const CONTRACT_ADDRESS = "0xc88229Ab87658823580E500aA4E4d5b48c10a604";
 export const CONTRACT_ABI = [
 	{
 		"inputs": [
@@ -142,6 +142,45 @@ export const CONTRACT_ABI = [
 	},
 	{
 		"inputs": [],
+		"name": "getTransactionHistory",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "roomNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "action",
+						"type": "string"
+					},
+					{ 
+						"name": "txHash",
+						"type": "bytes32" 
+					}
+				],
+				"internalType": "struct HotelCheckIn.Transaction[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "owner",
 		"outputs": [
 			{
@@ -190,6 +229,40 @@ export const CONTRACT_ABI = [
 				"internalType": "uint256",
 				"name": "checkInTime",
 				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "transactions",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "user",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "roomNumber",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "timestamp",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "action",
+				"type": "string"
 			}
 		],
 		"stateMutability": "view",

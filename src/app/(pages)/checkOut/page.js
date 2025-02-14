@@ -41,8 +41,7 @@ const Page = () => {
 
   return (
     <div>
-      <Header />
-
+      
       <h1>Check-out from the Room you Occupied</h1>
       <CheckingOut onCheckingOut={checkingOut} />
 
