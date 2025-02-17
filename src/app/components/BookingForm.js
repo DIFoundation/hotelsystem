@@ -42,7 +42,6 @@ const BookingForm = ({ onBookRoom }) => {
         setMaxDays(parseInt(maxDaysFromContract.toString()));
       } catch (error) {
         console.error("Error fetching max days:", error);
-        alert("Failed to fetch max days from contract. Using default value.");
       }
     }
     fetchMaxDays();
@@ -69,8 +68,6 @@ const BookingForm = ({ onBookRoom }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    console.log("🚀 Submitting form data:", formData);
 
     const finalData = {
       guestName: formData.guestName,

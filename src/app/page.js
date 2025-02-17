@@ -11,8 +11,6 @@ const HomePage = () => {
   async function bookRoom(formData) {
     const { guestName, roomNumber, daysToStay, totalAmountPaid } = formData;
 
-    console.log("🔍 Received Data in bookRoom():", formData); // Debugging
-
     try {
       if (!window.ethereum) {
         throw new Error("MetaMask is not installed. Please install MetaMask.");
@@ -47,9 +45,7 @@ const HomePage = () => {
       await transaction.wait();
       toast.success(`Room number ${roomNumber} successfully booked! 🎉🎉 Hash: ${transaction.hash} for ${daysToStay} days`);
 
-    } catch (error) {
-      console.log("❌ Error booking room:", error.message);
-     
+    } catch (error) {     
       if (error.code === "ACTION_REJECTED") {
         toast.error("Transaction rejected by user.");
       } else {

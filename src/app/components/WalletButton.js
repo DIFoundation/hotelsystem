@@ -26,10 +26,8 @@ const WalletButton = () => {
       } catch (error) {
         console.error("Connection error:", error);
         if (error.code === 4001) {
-          console.log("Connection rejected by user");
           toast.error("Connection rejected by user");
         } else {
-          console.error("Connection error:", error);
           toast.error("Connection error");
         }
       }
@@ -38,7 +36,6 @@ const WalletButton = () => {
 
   const disconnectWallet = () => {
     setWalletAddress(null);
-    console.log("Wallet disconnected");
     toast.info("Wallet disconnected");
   };
 
