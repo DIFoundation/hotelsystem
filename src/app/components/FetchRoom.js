@@ -1,7 +1,6 @@
 import { ethers } from "ethers";
 import { CONTRACT_ADDRESS, CONTRACT_ABI } from "../(pages)/api";
 
-// Function to fetch available rooms from the smart contract
 export async function fetchAvailableRooms() {
   if (!window.ethereum) {
     console.error("MetaMask is not installed.");
@@ -10,8 +9,13 @@ export async function fetchAvailableRooms() {
 
   try {
     const provider = new ethers.BrowserProvider(window.ethereum);
-    const contract = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, provider);
-    const rooms = await contract.getAvailableRooms(); // Fetch available rooms
+    await provider.send("eth_requestAccounts", []);
+    const contract = new ethers.Contract(
+      CONTRACT_ADDRESS,
+      CONTRACT_ABI,
+      provider
+    );
+    const rooms = await contract.getAvailableRoom();
 
     return rooms.map((room) => room.toString()); // Convert BigNumbers to strings
   } catch (error) {

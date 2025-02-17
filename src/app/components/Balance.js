@@ -1,51 +1,6 @@
-// "use client";
-// import React, { useState, useEffect } from 'react';
-// import { ethers } from 'ethers';
-// import { CONTRACT_ADDRESS, CONTRACT_ABI } from '../(pages)/api';
-
-// function ContractBalance() {
-//   const [balance, setBalance] = useState(null);
-//   const [error, setError] = useState(null);
-
-//   useEffect(() => {
-//     const fetchBalance = async () => {
-//       try {
-//         // Ensure the user has MetaMask or compatible wallet installed
-//         if (!window.ethereum) {
-//           setError("Ethereum provider not found. Please install MetaMask.");
-//           return;
-//         }
-
-//         // Connect to Ethereum using the browser provider
-//         const provider = new ethers.BrowserProvider(window.ethereum);
-
-//         // Create a contract instance
-//         const contract = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, provider);
-        
-//         // Fetch the contract balance
-//         const balanceWei = await provider.getBalance(contract.target);
-//         setBalance(ethers.formatEther(balanceWei));
-//       } catch (err) {
-//         setError("Failed to fetch contract balance: " + err.message);
-//       }
-//     };
-
-//     fetchBalance();
-//   }, []);
-
-//   return (
-//     <div>
-//       {error ? <p style={{ color: 'red' }}>{error}</p> : <p>{balance ? `${balance} ETH` : "Loading..."}</p>}
-//     </div>
-//   );
-// }
-
-// export default ContractBalance;
-
-
 "use client";
-import React, { useState, useEffect } from 'react';
-import { ethers } from 'ethers';
+import React, { useState, useEffect } from "react";
+import { ethers } from "ethers";
 
 function WalletBalance() {
   const [balance, setBalance] = useState(null);
@@ -62,7 +17,9 @@ function WalletBalance() {
         const provider = new ethers.BrowserProvider(window.ethereum);
 
         // Detect if accounts are already connected
-        const accounts = await window.ethereum.request({ method: "eth_accounts" });
+        const accounts = await window.ethereum.request({
+          method: "eth_accounts",
+        });
 
         if (accounts.length === 0) {
           setBalance(null);
@@ -94,13 +51,15 @@ function WalletBalance() {
       {balance !== null ? (
         <p>{balance.slice(0, 5)} ETH</p>
       ) : (
-        <p 
-            style={{
-                display: "none",
-            }}
-        >Wallet not connected.</p>
+        <p
+          style={{
+            display: "none",
+          }}
+        >
+          Wallet not connected.
+        </p>
       )}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
   );
 }
