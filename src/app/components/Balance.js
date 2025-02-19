@@ -49,7 +49,7 @@ function WalletBalance() {
   return (
     <div>
       {balance !== null ? (
-        <p>{balance.slice(0, 5)} ETH</p>
+        <p>{balance.slice(0, 5)} XFI</p>
       ) : (
         <p
           style={{

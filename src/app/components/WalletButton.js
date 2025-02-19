@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { ethers } from "ethers";
 import Balance from "./Balance";
 import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const WalletButton = () => {
   const [walletAddress, setWalletAddress] = useState(null);
@@ -13,7 +14,7 @@ const WalletButton = () => {
         const provider = new ethers.BrowserProvider(window.ethereum);
         await provider.send("eth_requestAccounts", []);
 
-        toast.info("Connecting wallet!");
+        toast.info("Connecting wallet. Please wait...");
 
         // Get the connected wallet address
         const signer = await provider.getSigner();
@@ -26,9 +27,9 @@ const WalletButton = () => {
       } catch (error) {
         console.error("Connection error:", error);
         if (error.code === 4001) {
-          toast.error("Connection rejected by user");
+          toast.error("Connection rejected by user.");
         } else {
-          toast.error("Connection error");
+          toast.error("Connection failed. Please try again.");
         }
       }
     }; 
@@ -36,7 +37,7 @@ const WalletButton = () => {
 
   const disconnectWallet = () => {
     setWalletAddress(null);
-    toast.info("Wallet disconnected");
+    toast.info('Wallet Disconected');
   };
 
   return (
@@ -61,7 +62,6 @@ const WalletButton = () => {
           ? `${walletAddress.slice(0, 6)}...${walletAddress.slice(-4)}`
           : "Connect Wallet"}
       </button>
-
       <ToastContainer />
     </div>
   );

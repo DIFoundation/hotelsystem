@@ -1,6 +1,7 @@
 import { ethers } from "ethers";
 import { CONTRACT_ADDRESS, CONTRACT_ABI } from "../(pages)/api";
 import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export async function checkoutRoom() {
   if (!window.ethereum) {

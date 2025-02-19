@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# KYOBI HOTEL: An Hotel Management System
 
-## Getting Started
+## Overview
+The **KYOBI HOTEL** is a web-based application designed to streamline hotel operations, including room bookings/reservations, customer management, and payments. This system offers a user-friendly interface for both hotel customers, enhancing the efficiency of hotel management.
 
-First, run the development server:
+## Live Demo
+Visit the live website here: [Hotel Management System](https://hotelsystem0.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
+### 1. **User Authentication**
+   - Secure user login and registration
+   - Role-based access (Admin, Customer, Staff)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. **Hotel Room Management**
+   - View available rooms with details
+   - Filter rooms price based on numbers of days to spend
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 3. **Reservation System**
+   - Online booking system for customers
+   - Booking confirmation and tracking
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. **Payment Integration**
+   - Secure payment gateway for online transactions
+   - Invoice generation for bookings
 
-## Learn More
+### 5. **Customer Dashboard**
+   - View booking history
+   - Manage profile and payment details
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Technologies Used
+The Hotel Management System is built using modern web technologies:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Frontend:** React.js, Tailwind CSS
+- **Backend:** Solidity
+- **Hosting:** Vercel (Frontend)
+- **Authentication:** Firebase/Auth0
+- **Payment Processing:** Stripe/PayPal
 
-## Deploy on Vercel
+## Installation and Setup
+To run the project locally, follow these steps:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Prerequisites
+Ensure you have the following installed:
+- [Node.js](https://nodejs.org/)
+- [MongoDB](https://www.mongodb.com/)
+- [Git](https://git-scm.com/)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Steps
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/your-username/hotel-management-system.git
+   cd hotel-management-system
+   ```
+
+2. **Install Dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Setup Environment Variables:**
+   Create a `.env` file and configure the following variables:
+   ```env
+   DATABASE_URL=mongodb+srv://your-db-url
+   JWT_SECRET=your-secret-key
+   STRIPE_SECRET_KEY=your-stripe-key
+   ```
+
+4. **Run the Backend:**
+   ```bash
+   npm run server
+   ```
+
+5. **Run the Frontend:**
+   ```bash
+   npm start
+   ```
+
+6. **Access the Application:**
+   Open `http://localhost:3000` in your browser.
+
+## Deployment
+- **Frontend:** Deployed on Vercel.
+- **Backend:** Hosted on Render/Heroku.
+- **Database:** MongoDB Atlas for cloud storage.
+
+## Contributing
+We welcome contributions! Follow these steps to contribute:
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature-name`)
+3. Commit your changes (`git commit -m "Add new feature"`)
+4. Push to the branch (`git push origin feature-name`)
+5. Submit a Pull Request
+
+## License
+This project is licensed under the **MIT License**.
+
+## Contact
+For support or inquiries, contact:
+- Email: support@hotelsystem.com
+- GitHub: [Your GitHub Profile](https://github.com/your-username)
+
+---
+
+Thank you for using the Hotel Management System!
+

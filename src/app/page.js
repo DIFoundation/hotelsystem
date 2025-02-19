@@ -6,6 +6,8 @@ import { ethers } from "ethers";
 import { CONTRACT_ADDRESS, CONTRACT_ABI } from "./(pages)/api";
 import { checkoutRoom } from "./components/checkoutRoom";
 import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import NewsUpdates from "./components/NewsUpdates";
 
 const HomePage = () => {
   async function bookRoom(formData) {
@@ -43,7 +45,7 @@ const HomePage = () => {
       );
 
       await transaction.wait();
-      toast.success(`Room number ${roomNumber} successfully booked! 🎉🎉 Hash: ${transaction.hash} for ${daysToStay} days`);
+      toast.success(`You have successfully book room number ${roomNumber} for ${daysToStay} days`);
 
     } catch (error) {     
       if (error.code === "ACTION_REJECTED") {
@@ -65,7 +67,7 @@ const HomePage = () => {
         playsInline
         className="absolute top-0 left-0 w-full h-full object-cover"
       >
-        <source src="/waterfall.mp4" type="video/mp4" />
+        <source src="/hotel.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <div className="absolute inset-0 bg-black bg-opacity-30"></div>
@@ -85,13 +87,18 @@ const HomePage = () => {
           >
             Check Out
           </button>
+          <ToastContainer />
         </div>
 
-        <div className=" bg-green-900 max-sm:py-2 md:p-8 rounded-md md:rounded-xl shadow-lg md:w-1/2 text-white">
+        <div className=" bg-green-900 max-sm:py-2 md:p-8 rounded-md md:rounded-xl shadow-lg md:w-1/2 text-white opacity-90">
           <BookingForm onBookRoom={bookRoom} />
           <ToastContainer />
         </div>
       </div>
+      
+      {/* <marquee className="absolute bottom-5 left-5 right-5 text-white text-center">
+        <h3><NewsUpdates /></h3>
+      </marquee> */}
     </div>
   );
 };

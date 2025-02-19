@@ -90,7 +90,7 @@ const BookingForm = ({ onBookRoom }) => {
           type="text"
           name="guestName"
           placeholder="Enter Fullname"
-          className="w-full p-2 max-sm:text-sm md:p-3 mb-2 bg-gray-200 text-black rounded-lg focus:outline-none"
+          className="w-full p-2 max-sm:text-sm md:p-3 mb-2 text-black uppercase font-semibold bg-gray-200 rounded-lg focus:outline-none"
           value={formData.guestName}
           onChange={handleChange}
           required
@@ -99,7 +99,7 @@ const BookingForm = ({ onBookRoom }) => {
         <div className="flex flex-col lg:flex-row lg:space-x-4 max-lg:space-y-4 mb-2 -mx-4">
           <select
             name="roomNumber"
-            className="lg:w-1/2 p-2 max-sm:text-sm bg-gray-200 text-black rounded-lg focus:outline-none"
+            className="lg:w-1/2 p-2 max-sm:text-sm text-black uppercase font-semibold bg-gray-200 rounded-lg focus:outline-none"
             value={formData.roomNumber}
             onChange={handleChange}
             required
@@ -118,7 +118,7 @@ const BookingForm = ({ onBookRoom }) => {
 
           <select
             name="daysToStay"
-            className="lg:w-1/2 p-2 max-sm:text-sm bg-gray-200 text-black rounded-lg focus:outline-none"
+            className="lg:w-1/2 p-2 max-sm:text-sm text-black uppercase font-semibold bg-gray-200 rounded-lg focus:outline-none"
             value={formData.daysToStay}
             onChange={handleChange}
             required
@@ -135,8 +135,8 @@ const BookingForm = ({ onBookRoom }) => {
         <input
           type="text"
           name="totalAmountPaid"
-          placeholder="Amount to Pay (ETH)"
-          className="w-full p-2 max-sm:text-sm bg-gray-200 text-black rounded-lg focus:outline-none"
+          placeholder="Amount to Pay (XFI)"
+          className="w-full p-2 max-sm:text-sm bg-gray-200 text-black font-semibold rounded-lg focus:outline-none"
           value={formData.totalAmountPaid}
           readOnly
         />
@@ -150,7 +150,6 @@ const BookingForm = ({ onBookRoom }) => {
 
       <div className="flex justify-center mt-2 space-x-2">
         <span className="w-2 h-2 bg-white rounded-full"></span>
-        <span className="w-2 h-2 bg-gray-400 rounded-full"></span>
         
       </div>
     </div>
