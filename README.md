@@ -38,7 +38,7 @@ Ensure you have the following installed:
 1. **Clone the Repository:**
    ```bash
    git clone https://github.com/DIFoundation/kyobihotel.git
-   cd hotel-management-system
+   cd kyobihotel
    ```
 
 2. **Install Dependencies:**
