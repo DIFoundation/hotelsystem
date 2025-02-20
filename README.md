@@ -4,7 +4,7 @@
 The KYOBI HOTEL is a web-based application designed to streamline hotel operations, including room bookings/reservations, customer management, and payments. It offers a user-friendly interface for hotel customers, enhancing hotel management efficiency.
 
 ## Live Demo
-Visit the live website here: [Hotel Management System](https://hotelsystem0.vercel.app/)
+Visit the live website here: [Hotel Management System](https://kyobihotel.vercel.app/)
 
 ## Features
 ### 1. **Hotel Room Management**
@@ -37,7 +37,7 @@ Ensure you have the following installed:
 ### Steps
 1. **Clone the Repository:**
    ```bash
-   git clone (https://github.com/DIFoundation/hotelsystem.git)
+   git clone https://github.com/DIFoundation/kyobihotel.git
    cd hotel-management-system
    ```
 
