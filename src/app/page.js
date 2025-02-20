@@ -54,8 +54,6 @@ const HomePage = () => {
         toast.error("Booking failed. Please try again.");
       }
     }
-
-    
   }
 
   return (

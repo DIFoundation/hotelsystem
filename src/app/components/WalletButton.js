@@ -14,6 +14,8 @@ const WalletButton = () => {
         const provider = new ethers.BrowserProvider(window.ethereum);
         await provider.send("eth_requestAccounts", []);
 
+        console.log("connecting wallet...");
+        
         toast.info("Connecting wallet. Please wait...");
 
         // Get the connected wallet address

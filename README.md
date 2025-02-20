@@ -37,7 +37,7 @@ Ensure you have the following installed:
 ### Steps
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/hotel-management-system.git
+   git clone https://github.com/DIFoundation/hotel-management-system.git
    cd hotel-management-system
    ```
 
