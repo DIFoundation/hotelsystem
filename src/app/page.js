@@ -76,7 +76,7 @@ const HomePage = () => {
         <div className="flex flex-row md:flex-col max-md:items-center max-md:space-x-10">
           <div className="text-white text-xl md:text-4xl lg:text-5xl font-bold leading-snug">
             Find comfort <br /> like your <br />
-            <span className="italic text-yellow-500">home</span>
+            <span className="italic text-yellow-500 motion">home</span>
           </div>
 
           <button

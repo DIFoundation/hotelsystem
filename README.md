@@ -76,4 +76,6 @@ For support or inquiries, contact:
 
 ---
 
+## NB: You must have a XFI token (mainnet or testnet) before the available rooms can come up.
+
 Thank you for using the Hotel Management System!
