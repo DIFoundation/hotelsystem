@@ -47,7 +47,7 @@ function WalletBalance() {
   }, []);
 
   return (
-    <div>
+    <div className="border-r-2">
       {balance !== null ? (
         <p>{balance.slice(0, 5)} XFI</p>
       ) : (

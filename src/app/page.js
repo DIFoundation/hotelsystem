@@ -72,7 +72,7 @@ const HomePage = () => {
 
       <Header />
 
-      <div className="absolute top-1/4 left-5 right-5 md:top-24 lg:top-1/4 flex flex-col-reverse md:flex-row justify-between items-center ">
+      <div className="absolute top-1/4 left-8 right-8 md:top-24 lg:top-1/4 flex flex-col-reverse md:flex-row justify-between items-center ">
         <div className="flex flex-row md:flex-col max-md:items-center max-md:space-x-10">
           <div className="text-white text-xl md:text-4xl lg:text-5xl font-bold leading-snug">
             Find comfort <br /> like your <br />
@@ -88,7 +88,7 @@ const HomePage = () => {
           <ToastContainer />
         </div>
 
-        <div className=" bg-green-900 max-sm:py-2 md:p-8 rounded-md md:rounded-xl shadow-lg md:w-1/2 text-white opacity-90">
+        <div className="">
           <BookingForm onBookRoom={bookRoom} />
           <ToastContainer />
         </div>

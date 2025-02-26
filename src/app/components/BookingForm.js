@@ -85,21 +85,28 @@ const BookingForm = ({ onBookRoom }) => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form
+        onSubmit={handleSubmit}
+        className="bg-white/80 backdrop-blur-sm shadow-xl p-6 rounded-lg max-w-lg mx-auto border border-gray-200"
+      >
+        <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center">
+          Book a Room
+        </h2>
+
         <input
           type="text"
           name="guestName"
           placeholder="Enter Fullname"
-          className="w-full p-2 max-sm:text-sm md:p-3 mb-2 text-black uppercase font-semibold bg-gray-200 rounded-lg focus:outline-none"
+          className="w-full p-3 text-black uppercase font-medium bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 transition"
           value={formData.guestName}
           onChange={handleChange}
           required
         />
 
-        <div className="flex flex-col lg:flex-row lg:space-x-4 max-lg:space-y-4 mb-2 -mx-4">
+        <div className="flex flex-col lg:flex-row lg:space-x-4 max-lg:space-y-4 mt-4 -mx-4">
           <select
             name="roomNumber"
-            className="lg:w-1/2 p-2 max-sm:text-sm text-black uppercase font-semibold bg-gray-200 rounded-lg focus:outline-none"
+            className="lg:w-1/2 p-3 bg-gray-100 border border-gray-300 text-black uppercase font-medium rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 transition"
             value={formData.roomNumber}
             onChange={handleChange}
             required
@@ -118,7 +125,7 @@ const BookingForm = ({ onBookRoom }) => {
 
           <select
             name="daysToStay"
-            className="lg:w-1/2 p-2 max-sm:text-sm text-black uppercase font-semibold bg-gray-200 rounded-lg focus:outline-none"
+            className="lg:w-1/2 p-3 bg-gray-100 border border-gray-300 text-black uppercase font-medium rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 transition"
             value={formData.daysToStay}
             onChange={handleChange}
             required
@@ -136,21 +143,21 @@ const BookingForm = ({ onBookRoom }) => {
           type="text"
           name="totalAmountPaid"
           placeholder="Amount to Pay (XFI)"
-          className="w-full p-2 max-sm:text-sm bg-gray-200 text-black font-semibold rounded-lg focus:outline-none"
+          className="w-full p-3 bg-gray-100 border border-gray-300 text-black font-medium rounded-lg mt-4 focus:outline-none"
           value={formData.totalAmountPaid}
           readOnly
         />
+
         <button
           type="submit"
-          className="mt-6 w-full bg-yellow-500 text-black font-bold py-3 rounded-lg border-2 border-yellow-500 hover:bg-transparent hover:text-yellow-500"
+          className="mt-6 w-full bg-yellow-500 text-black font-bold py-3 rounded-lg border-2 border-yellow-500 hover:bg-transparent hover:text-yellow-500 transition-all"
         >
           Book Room
         </button>
       </form>
 
-      <div className="flex justify-center mt-2 space-x-2">
+      <div className="flex justify-center mt-2">
         <span className="w-2 h-2 bg-white rounded-full"></span>
-        
       </div>
     </div>
   );
