@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { fetchAvailableRooms } from "./FetchRoom";
 import { ethers } from "ethers";
 import { CONTRACT_ADDRESS, CONTRACT_ABI } from "../(pages)/api";
+import Link from "next/link";
 
 const BookingForm = ({ onBookRoom }) => {
   const [formData, setFormData] = useState({
@@ -154,6 +155,10 @@ const BookingForm = ({ onBookRoom }) => {
         >
           Book Room
         </button>
+
+        {/* <Link href="/transactions" className="block text-center mt-4 text-gray-600 hover:underline">
+          View Transactions
+        </Link> */}
       </form>
 
       <div className="flex justify-center mt-2">
